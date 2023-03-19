@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test
 class OmokTest {
     private lateinit var rule: OmokRule
 
-    private val blackPositions: MutableList<Position> by lazy {
+    private val blackPositions: MutableList<Position> =
         mutableListOf(
             Position(1, 1),
             Position(1, 2),
@@ -22,8 +22,8 @@ class OmokTest {
             Position(1, 4),
             Position(1, 5),
         )
-    }
-    private val whitePositions: MutableList<Position> by lazy {
+
+    private val whitePositions: MutableList<Position> =
         mutableListOf(
             Position(3, 3),
             Position(3, 4),
@@ -31,7 +31,6 @@ class OmokTest {
             Position(5, 5),
             Position(6, 5),
         )
-    }
 
     @BeforeEach
     fun setUp() {
@@ -46,7 +45,7 @@ class OmokTest {
                 assertThat(stoneColor).isEqualTo(StoneColor.BLACK)
             }
 
-            override fun onEndTurn(players: Players) { }
+            override fun onEndTurn(players: Players) {}
 
             override fun onStartGame() {}
 
